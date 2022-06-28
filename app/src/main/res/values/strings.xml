@@ -4,5 +4,7 @@
     <string name="lorem_ipsum">Picture</string>
     <string name="error_loading">Error</string>
     <string name="loading">Loading</string>
+    <string name="search_wiki">Search</string>
+    <string name="wiki_helper_text">Поищите термин в википедии</string>
 
 </resources>

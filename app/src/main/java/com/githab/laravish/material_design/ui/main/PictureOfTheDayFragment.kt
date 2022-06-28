@@ -1,6 +1,8 @@
 package com.githab.laravish.material_design.ui.main
 
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -38,15 +40,28 @@ class PictureOfTheDayFragment : Fragment() {
             renderData(appState)
         }
         viewModel.sentRequest()
+        searchWiki()
+    }
+
+    private fun searchWiki() {
+        binding.inputLayout.setEndIconOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data =
+                    Uri.parse("https://ru.wikipedia.org/wiki/${binding.editText.text.toString()}")
+            })
+        }
     }
 
     private fun renderData(appState: AppState) = with(binding) {
         when (appState) {
             is AppState.Error -> {
-                Toast.makeText(requireContext(), getString(R.string.error_loading), Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(),
+                    getString(R.string.error_loading),
+                    Toast.LENGTH_LONG).show()
             }
             AppState.Loading -> {
-                Toast.makeText(requireContext(), getString(R.string.loading), Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), getString(R.string.loading), Toast.LENGTH_LONG)
+                    .show()
             }
             is AppState.Success -> {
                 imageView.load(appState.pictureOfTheDayResponseData.url) {
