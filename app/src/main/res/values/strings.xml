@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Material_design</string>
+    <string name="next">NEXT</string>
+    <string name="lorem_ipsum">Picture</string>
+    <string name="error_loading">Error</string>
+    <string name="loading">Loading</string>
+
+</resources>
