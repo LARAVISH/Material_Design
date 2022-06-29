@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.githab.laravish.material_design.R
+import com.githab.laravish.material_design.*
 import com.githab.laravish.material_design.databinding.FragmentPictureBinding
 
 
@@ -39,15 +39,28 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner) { appState ->
             renderData(appState)
         }
-        viewModel.sentRequest()
         searchWiki()
+        chipGroupOnClick()
+    }
+
+    private fun chipGroupOnClick() = with(binding) {
+        //сделать chipGroup
+        chipToday.setOnClickListener {
+            viewModel.sentRequest(TODAY)
+        }
+        chipYesterday.setOnClickListener {
+            viewModel.sentRequest(YESTERDAY)
+        }
+        chipToDaysAgo.setOnClickListener {
+            viewModel.sentRequest(TO_DAYS_AGO)
+        }
     }
 
     private fun searchWiki() {
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
-                    Uri.parse("https://ru.wikipedia.org/wiki/${binding.editText.text.toString()}")
+                    Uri.parse("$URL_WIKI${binding.editText.text.toString()}")
             })
         }
     }
