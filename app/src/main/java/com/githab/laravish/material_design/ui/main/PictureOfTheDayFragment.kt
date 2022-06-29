@@ -39,6 +39,7 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner) { appState ->
             renderData(appState)
         }
+        viewModel.sentRequest(TODAY)
         searchWiki()
         chipGroupOnClick()
     }
@@ -80,7 +81,7 @@ class PictureOfTheDayFragment : Fragment() {
                 imageView.load(appState.pictureOfTheDayResponseData.url) {
                     crossfade(true)
                     placeholder(R.drawable.ic_launcher_background)
-                    transformations(RoundedCornersTransformation(35f))
+                    transformations(RoundedCornersTransformation(50f))
                     error(R.drawable.ic_launcher_background)
                 }
             }

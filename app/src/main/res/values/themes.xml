@@ -6,6 +6,7 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
+        <item name="chipStyle">@style/MyChipStyle</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -20,4 +21,13 @@
         <item name="counterTextColor">@color/text_input_layout_color</item>
         <item name="hintTextColor">@color/text_input_layout_color</item>
     </style>
+
+    <style name="MyChipStyle" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="rippleColor">@color/chip_ripl_color</item>
+        <item name="chipStartPadding">@dimen/chip_start_paddin</item>
+        <item name="chipEndPadding">@dimen/chip_end_paddin</item>
+    </style>
+
+    <dimen name="chip_end_paddin">6dp</dimen>
 </resources>

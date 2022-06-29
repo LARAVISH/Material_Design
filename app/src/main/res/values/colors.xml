@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_input_layout_color">#2C125A</color>
+    <color name="chip_background_color">#80A18ACA</color>
+    <color name="chip_ripl_color">#803B54DC</color>
+
 </resources>

@@ -48,8 +48,6 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipYesterday"
-            style="@style/Widget.Material3.Chip.Suggestion"
-            android:layout_marginEnd="24dp"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,16 +55,13 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipToday"
-            style="@style/Widget.Material3.Chip.Suggestion"
             android:layout_width="wrap_content"
             android:checked="true"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
             android:text="@string/today"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipToDaysAgo"
-            style="@style/Widget.Material3.Chip.Suggestion"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

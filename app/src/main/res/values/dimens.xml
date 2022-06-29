@@ -7,4 +7,5 @@
     <dimen name="box_corner_radius">10dp</dimen>
     <dimen name="margin_top_chip_group">24dp</dimen>
     <dimen name="margin_bottom_chip_group">24dp</dimen>
+    <dimen name="chip_start_paddin">4dp</dimen>
 </resources>
