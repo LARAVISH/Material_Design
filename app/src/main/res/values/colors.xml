@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
+    <color name="green">#16EA1E</color>
     <color name="purple_500">#510DB3</color>
     <color name="purple_700">#B33700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="yellow">#F6BF1A</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_input_layout_color">#2C125A</color>
     <color name="chip_background_color">#80A18ACA</color>
     <color name="chip_ripl_color">#803B54DC</color>
+    <color name="red">#E60F28</color>
+    <color name="brown">#8B4513</color>
+    <color name="chocolate">#D2691E</color>
+    <color name="peru">#CD853F</color>
+    <color name="gold">#DAA520</color>
+    <color name="rosy">#BC8F8F</color>
+
+
 
 </resources>
