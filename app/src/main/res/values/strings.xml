@@ -12,5 +12,8 @@
     <string name="to_days_ago">To days ago</string>
     <string name="favorite">Favorite</string>
     <string name="Setting">Search</string>
+    <string name="archive">Archive</string>
+    <string name="send">Send</string>
+    <string name="search">Search</string>
 
 </resources>

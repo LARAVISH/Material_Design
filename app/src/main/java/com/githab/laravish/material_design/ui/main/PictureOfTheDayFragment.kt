@@ -12,6 +12,7 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.githab.laravish.material_design.*
 import com.githab.laravish.material_design.databinding.FragmentPictureBinding
+import com.githab.laravish.material_design.ui.main.drawer.BottomNavigationDrawerFragment
 
 
 class PictureOfTheDayFragment : Fragment() {
@@ -45,7 +46,7 @@ class PictureOfTheDayFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.bottom_nav_menu,menu)
+        inflater.inflate(R.menu.bottom_app_bar_menu,menu)
     }
 
 
@@ -58,7 +59,8 @@ class PictureOfTheDayFragment : Fragment() {
             R.id.action_setting ->{
                 Toast.makeText(requireContext(),"setting",Toast.LENGTH_LONG).show()
             }
-            android.R.id.home -> activity?.let {  }
+            android.R.id.home -> activity?.let { BottomNavigationDrawerFragment()
+                .show(it.supportFragmentManager,"BNDF") }
         }
        return true
     }
