@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Killer Material Design</string>
+    <string name="app_name"> Material Design</string>
     <string name="next">NEXT</string>
     <string name="lorem_ipsum">Picture</string>
     <string name="error_loading">Error</string>
@@ -10,5 +10,7 @@
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="to_days_ago">To days ago</string>
+    <string name="favorite">Favorite</string>
+    <string name="Setting">Search</string>
 
 </resources>

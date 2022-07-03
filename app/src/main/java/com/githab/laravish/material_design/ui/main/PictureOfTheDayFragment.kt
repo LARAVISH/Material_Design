@@ -4,9 +4,7 @@ package com.githab.laravish.material_design.ui.main
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -42,10 +40,31 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.sentRequest(TODAY)
         searchWiki()
         chipGroupOnClick()
+        setHasOptionsMenu(true)
+        (requireActivity() as MainActivity).setSupportActionBar(binding.bottomNavigation)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.bottom_nav_menu,menu)
+    }
+
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_favorite ->{
+                Toast.makeText(requireContext(),"favorite",Toast.LENGTH_LONG).show()
+            }
+            R.id.action_setting ->{
+                Toast.makeText(requireContext(),"setting",Toast.LENGTH_LONG).show()
+            }
+            android.R.id.home -> activity?.let {  }
+        }
+       return true
     }
 
     private fun chipGroupOnClick() = with(binding) {
-        //сделать chipGroup
+
         chipToday.setOnClickListener {
             viewModel.sentRequest(TODAY)
         }
@@ -87,6 +106,7 @@ class PictureOfTheDayFragment : Fragment() {
             }
         }
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

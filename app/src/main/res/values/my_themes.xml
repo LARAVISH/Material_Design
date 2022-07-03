@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyThemeGreen" parent="Theme.Material_design">
+        <item name="colorPrimary">?themeColorPrimary</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="themeColorPrimary">@color/spring_green</item>
+        <item name="android:windowBackground">@color/light_green_1</item>
+        <item name="textAppearanceLabelLarge">@style/MyTextAppearanceLabelLarge</item>
+        <item name="chipStyle">@style/MyChipStyleForMyThemeGreen</item>
+        <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeGreen</item>
+    </style>
+
+    <style name="MyChipStyleForMyThemeGreen" parent="MyChipStyle">
+        <item name="chipBackgroundColor">@drawable/selector_background_chip_for_green_theme</item>
+    </style>
+
+    <style name="BottomAppBarStyleForThemeGreen" parent="Widget.Material3.BottomAppBar">
+        <item name="backgroundTint">@color/lime_green</item>
+        <item name="navigationIconTint">@color/gray</item>
+    </style>
+
+<!--    my brown theme -->
+
+    <style name="MyThemeBrown" parent="Theme.Material_design">
+        <item name="colorPrimary">?themeColorPrimary</item>
+        <item name="colorPrimaryVariant">@color/chocolate</item>
+        <item name="colorOnPrimary">@color/rosy</item>
+        <item name="themeColorPrimary">@color/brown</item>
+        <item name="chipStyle">@style/MyChipStyleForMeBrownTheme</item>
+        <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeBrown</item>
+    </style>
+
+    <style name="MyChipStyleForMeBrownTheme" parent="MyChipStyle">
+        <item name="chipBackgroundColor">@drawable/my_selector_background_chip</item>
+    </style>
+
+    <style name="BottomAppBarStyleForThemeBrown" parent="Widget.Material3.BottomAppBar">
+        <item name="backgroundTint">@color/chocolate</item>
+        <item name="navigationIconTint">@color/black</item>
+    </style>
+
+</resources>
