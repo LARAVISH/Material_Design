@@ -5,7 +5,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -25,10 +24,7 @@
         <item name="shapeAppearanceOverlay">@style/MyShapeAppearanceSmallComponent</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
 
-
     </style>
-
-
 
 
     <style name="MyShapeAppearanceSmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
@@ -49,7 +45,6 @@
         <item name="counterTextColor">@color/text_input_layout_color</item>
         <item name="hintTextColor">@color/text_input_layout_color</item>
     </style>
-
 
     <style name="MyChipStyle" parent="Widget.Material3.Chip.Suggestion">
         <item name="shapeAppearanceOverlay">@style/MyShapeAppearanceSmallComponent</item>

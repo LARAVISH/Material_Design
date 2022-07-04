@@ -9,6 +9,7 @@
         <item name="textAppearanceLabelLarge">@style/MyTextAppearanceLabelLarge</item>
         <item name="chipStyle">@style/MyChipStyleForMyThemeGreen</item>
         <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeGreen</item>
+        <item name="tabStyle">@style/TabLayoutForGreenTheme</item>
     </style>
 
     <style name="MyChipStyleForMyThemeGreen" parent="MyChipStyle">
@@ -20,7 +21,12 @@
         <item name="navigationIconTint">@color/gray</item>
     </style>
 
-<!--    my brown theme -->
+    <style name="TabLayoutForGreenTheme" parent="Widget.Material3.TabLayout">
+        <item name="tabIndicatorColor">@color/lime_green</item>
+        <item name="tabRippleColor">@color/gray</item>
+    </style>
+
+    <!--    my brown theme -->
 
     <style name="MyThemeBrown" parent="Theme.Material_design">
         <item name="colorPrimary">?themeColorPrimary</item>
@@ -29,6 +35,7 @@
         <item name="themeColorPrimary">@color/brown</item>
         <item name="chipStyle">@style/MyChipStyleForMeBrownTheme</item>
         <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeBrown</item>
+        <item name="tabStyle">@style/TabLayoutForBrownTheme</item>
     </style>
 
     <style name="MyChipStyleForMeBrownTheme" parent="MyChipStyle">
@@ -38,6 +45,11 @@
     <style name="BottomAppBarStyleForThemeBrown" parent="Widget.Material3.BottomAppBar">
         <item name="backgroundTint">@color/chocolate</item>
         <item name="navigationIconTint">@color/black</item>
+    </style>
+
+    <style name="TabLayoutForBrownTheme" parent="Widget.Material3.TabLayout">
+        <item name="tabIndicatorColor">@color/yellow</item>
+        <item name="tabRippleColor">@color/rosy</item>
     </style>
 
 </resources>

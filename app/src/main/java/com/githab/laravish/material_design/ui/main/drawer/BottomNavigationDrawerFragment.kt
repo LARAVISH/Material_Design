@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.githab.laravish.material_design.databinding.FragmentBottomNavigationDrawerBinding
+import com.githab.laravish.material_design.ui.main.pictures.PictureOfTheDayFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment(){
@@ -17,7 +18,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment(){
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentBottomNavigationDrawerBinding.inflate(inflater,container,false)
         return binding.root
     }

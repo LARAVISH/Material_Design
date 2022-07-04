@@ -1,4 +1,4 @@
-package com.githab.laravish.material_design.ui.main
+package com.githab.laravish.material_design.ui.main.pictures
 
 
 import android.content.Intent
@@ -12,7 +12,10 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.githab.laravish.material_design.*
 import com.githab.laravish.material_design.databinding.FragmentPictureBinding
+import com.githab.laravish.material_design.ui.main.AppState
+import com.githab.laravish.material_design.ui.main.PictureOfTheDayViewModel
 import com.githab.laravish.material_design.ui.main.drawer.BottomNavigationDrawerFragment
+import com.githab.laravish.material_design.ui.main.setting.SettingFragment
 
 
 class PictureOfTheDayFragment : Fragment() {
@@ -49,20 +52,20 @@ class PictureOfTheDayFragment : Fragment() {
         inflater.inflate(R.menu.bottom_app_bar_menu,menu)
     }
 
-
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_favorite ->{
                 Toast.makeText(requireContext(),"favorite",Toast.LENGTH_LONG).show()
             }
             R.id.action_setting ->{
-                Toast.makeText(requireContext(),"setting",Toast.LENGTH_LONG).show()
+                requireActivity().supportFragmentManager.beginTransaction().hide(this)
+                    .add(R.id.container, SettingFragment.newInstance())
+                    .addToBackStack("").commit()
             }
             android.R.id.home -> activity?.let { BottomNavigationDrawerFragment()
                 .show(it.supportFragmentManager,"BNDF") }
         }
-       return true
+       return super.onOptionsItemSelected(item)
     }
 
     private fun chipGroupOnClick() = with(binding) {
