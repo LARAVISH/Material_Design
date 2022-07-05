@@ -5,7 +5,6 @@
         <item name="colorPrimary">?themeColorPrimary</item>
         <item name="colorPrimaryVariant">@color/green</item>
         <item name="themeColorPrimary">@color/spring_green</item>
-        <item name="android:windowBackground">@color/light_green_1</item>
         <item name="textAppearanceLabelLarge">@style/MyTextAppearanceLabelLarge</item>
         <item name="chipStyle">@style/MyChipStyleForMyThemeGreen</item>
         <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeGreen</item>
