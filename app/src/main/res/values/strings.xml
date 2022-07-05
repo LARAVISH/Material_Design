@@ -17,5 +17,6 @@
     <string name="search">Search</string>
     <string name="theme_brown">Theme Brown</string>
     <string name="theme_green">Theme Green</string>
+    <string name="theme_default">Default</string>
 
 </resources>
