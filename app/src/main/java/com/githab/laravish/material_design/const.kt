@@ -14,3 +14,6 @@ const val THEME_BROWN = 1
 const val THEME_GREEN = 2
 const val CURRENT_THEME = "current theme"
 const val KEY_THEME = "key"
+const val EARTH = "earth"
+const val MARS = "mars"
+const val SYSTEM = "system"

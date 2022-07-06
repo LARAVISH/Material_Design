@@ -1,11 +1,10 @@
 package com.githab.laravish.material_design.ui.main.navigation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.githab.laravish.material_design.R
+import androidx.fragment.app.Fragment
 import com.githab.laravish.material_design.databinding.FragmentFirstPictureBinding
 
 
@@ -14,7 +13,6 @@ class FirstPictureFragment : Fragment() {
     private var _binding: FragmentFirstPictureBinding? = null
     private val binding: FragmentFirstPictureBinding
         get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
