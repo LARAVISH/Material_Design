@@ -11,4 +11,8 @@
     <dimen name="my_text_appearance_letter_spacing">0.11</dimen>
     <dimen name="chip_end_padding">6dp</dimen>
     <dimen name="size_my_text_appearance_label_large">16dp</dimen>
+    <dimen name="margin_top_linear_layout">16dp</dimen>
+    <dimen name="margin_bottom_linear_layout">16dp</dimen>
+    <dimen name="margin_end_image_view">8dp</dimen>
+    <dimen name="margin_start_image_view">8dp</dimen>
 </resources>

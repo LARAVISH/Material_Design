@@ -5,12 +5,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.navigation.ThirdPictureFragment">
 
-
     <ImageView
         android:id="@+id/imageViewSecond"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/system"
         android:src="@drawable/bg_system" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/margin_bottom_linear_layout"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/earth"
+            android:src="@drawable/swipe_indicator_passive" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_start_image_view"
+            android:layout_marginEnd="@dimen/margin_end_image_view"
+            android:contentDescription="@string/mars"
+            android:src="@drawable/swipe_indicator_passive" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/system"
+            android:src="@drawable/swipe_indicator_active" />
+
+    </LinearLayout>
 
 </FrameLayout>
