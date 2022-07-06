@@ -18,5 +18,9 @@
     <string name="theme_brown">Theme Brown</string>
     <string name="theme_green">Theme Green</string>
     <string name="theme_default">Default</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="earth">Earth</string>
+    <string name="mars">Mars</string>
+    <string name="system">Solar system</string>
 
 </resources>

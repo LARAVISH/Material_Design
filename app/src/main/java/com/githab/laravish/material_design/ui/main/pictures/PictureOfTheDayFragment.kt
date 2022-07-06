@@ -15,6 +15,7 @@ import com.githab.laravish.material_design.databinding.FragmentPictureBinding
 import com.githab.laravish.material_design.ui.main.AppState
 import com.githab.laravish.material_design.ui.main.PictureOfTheDayViewModel
 import com.githab.laravish.material_design.ui.main.drawer.BottomNavigationDrawerFragment
+import com.githab.laravish.material_design.ui.main.navigation.ViewPagerFragment
 import com.githab.laravish.material_design.ui.main.setting.SettingFragment
 
 
@@ -46,6 +47,13 @@ class PictureOfTheDayFragment : Fragment() {
         chipGroupOnClick()
         setHasOptionsMenu(true)
         (requireActivity() as MainActivity).setSupportActionBar(binding.bottomNavigation)
+        floatActionButtonOnClick()
+    }
+
+    private fun floatActionButtonOnClick() {
+        binding.fab.setOnClickListener {
+            getFragment(ViewPagerFragment.newInstance(), "VPF")
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -58,14 +66,18 @@ class PictureOfTheDayFragment : Fragment() {
                 Toast.makeText(requireContext(),"favorite",Toast.LENGTH_LONG).show()
             }
             R.id.action_setting ->{
-                requireActivity().supportFragmentManager.beginTransaction().hide(this)
-                    .add(R.id.container, SettingFragment.newInstance())
-                    .addToBackStack("").commit()
+                getFragment(SettingFragment.newInstance(),"SF")
             }
             android.R.id.home -> activity?.let { BottomNavigationDrawerFragment()
                 .show(it.supportFragmentManager,"BNDF") }
         }
        return super.onOptionsItemSelected(item)
+    }
+
+    private fun getFragment(fragment : Fragment, tag : String) {
+        requireActivity().supportFragmentManager.beginTransaction().hide(this)
+            .add(R.id.container, fragment)
+            .addToBackStack(tag).commit()
     }
 
     private fun chipGroupOnClick() = with(binding) {
