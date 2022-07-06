@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.githab.laravish.material_design.R
 import com.githab.laravish.material_design.databinding.FragmentViewPagerBinding
 
 
@@ -27,6 +28,13 @@ class ViewPagerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.viewPager.adapter = ViewPagerAdapter(parentFragmentManager)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
+        setIcon()
+    }
+
+    private fun setIcon() = with(binding) {
+        tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_earth)
+        tabLayout.getTabAt(1)?.setIcon(R.drawable.ic_mars)
+        tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_system)
     }
 
     companion object {
