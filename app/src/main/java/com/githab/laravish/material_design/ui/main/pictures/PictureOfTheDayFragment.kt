@@ -4,7 +4,9 @@ package com.githab.laravish.material_design.ui.main.pictures
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -14,9 +16,6 @@ import com.githab.laravish.material_design.*
 import com.githab.laravish.material_design.databinding.FragmentPictureBinding
 import com.githab.laravish.material_design.ui.main.AppState
 import com.githab.laravish.material_design.ui.main.PictureOfTheDayViewModel
-import com.githab.laravish.material_design.ui.main.drawer.BottomNavigationDrawerFragment
-import com.githab.laravish.material_design.ui.main.navigation.ViewPagerFragment
-import com.githab.laravish.material_design.ui.main.setting.SettingFragment
 
 
 class PictureOfTheDayFragment : Fragment() {
@@ -45,43 +44,9 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.sentRequest(TODAY)
         searchWiki()
         chipGroupOnClick()
-        setHasOptionsMenu(true)
-        (requireActivity() as MainActivity).setSupportActionBar(binding.bottomNavigation)
-        floatActionButtonOnClick()
-    }
-
-    private fun floatActionButtonOnClick() {
-        binding.fab.setOnClickListener {
-            getFragment(ViewPagerFragment.newInstance(), "VPF")
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.bottom_app_bar_menu,menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.action_favorite ->{
-                Toast.makeText(requireContext(),"favorite",Toast.LENGTH_LONG).show()
-            }
-            R.id.action_setting ->{
-                getFragment(SettingFragment.newInstance(),"SF")
-            }
-            android.R.id.home -> activity?.let { BottomNavigationDrawerFragment()
-                .show(it.supportFragmentManager,"BNDF") }
-        }
-       return super.onOptionsItemSelected(item)
-    }
-
-    private fun getFragment(fragment : Fragment, tag : String) {
-        requireActivity().supportFragmentManager.beginTransaction().hide(this)
-            .add(R.id.container, fragment)
-            .addToBackStack(tag).commit()
     }
 
     private fun chipGroupOnClick() = with(binding) {
-
         chipToday.setOnClickListener {
             viewModel.sentRequest(TODAY)
         }
@@ -123,7 +88,6 @@ class PictureOfTheDayFragment : Fragment() {
             }
         }
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

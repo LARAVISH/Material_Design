@@ -38,9 +38,6 @@
             android:layout_height="wrap_content"
             android:src="@drawable/swipe_indicator_passive"
             android:contentDescription="@string/system" />
-
-
-
     </LinearLayout>
 
 </FrameLayout>

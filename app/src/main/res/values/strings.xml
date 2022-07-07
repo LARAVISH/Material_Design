@@ -8,7 +8,6 @@
     <string name="wiki_helper_text">Поищите термин в википедии</string>
     <string name="yesterday">Yesterday</string>
     <string name="today">Today</string>
-    <string name="tomorrow">Tomorrow</string>
     <string name="to_days_ago">To days ago</string>
     <string name="favorite">Favorite</string>
     <string name="setting">Setting</string>
@@ -18,9 +17,12 @@
     <string name="theme_brown">Theme Brown</string>
     <string name="theme_green">Theme Green</string>
     <string name="theme_default">Default</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="earth">Earth</string>
     <string name="mars">Mars</string>
     <string name="system">Solar system</string>
+    <string name="home">Home</string>
+    <string name="gallery">Gallery</string>
+    <string name="photo" translatable="false">Photo</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
 </resources>
