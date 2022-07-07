@@ -3,7 +3,7 @@ package com.githab.laravish.material_design
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.githab.laravish.material_design.databinding.ActivityMainBinding
-import com.githab.laravish.material_design.ui.main.pictures.PictureOfTheDayFragment
+import com.githab.laravish.material_design.ui.main.navigation.NavigateFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -11,12 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(initThemeStyle(getCurrentTheme()))
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, PictureOfTheDayFragment.newInstance())
+                .replace(R.id.container, NavigateFragment.newInstance())
                 .commitNow()
         }
     }
