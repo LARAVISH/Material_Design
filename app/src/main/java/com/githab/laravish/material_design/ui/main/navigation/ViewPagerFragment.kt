@@ -34,9 +34,9 @@ class ViewPagerFragment : Fragment() {
         setIcon()
     }
 
-    private fun bindTabLayout() {
-        TabLayoutMediator(binding.tabLayout,
-            binding.viewPager2
+    private fun bindTabLayout() = with(binding) {
+        TabLayoutMediator(tabLayout,
+            viewPager2
         ) { tab, position ->
             tab.text = when (position) {
                 0 -> EARTH
