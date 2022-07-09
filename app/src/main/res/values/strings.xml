@@ -27,7 +27,9 @@
     <string name="constraint_layout" translatable="false">Constraint</string>
     <string name="coordinator_layout" translatable="false">Coordinator</string>
     <string name="motion_layout" translatable="false">Motion</string>
-    <string name="button_one" translatable="false">One</string>
-    <string name="button_two" translatable="false">Two</string>
+    <string name="button_one" translatable="false">1</string>
+    <string name="button_two" translatable="false">2</string>
+    <string name="button_third" translatable="false">3</string>
+    <string name="button_four" translatable="false">4</string>
 
 </resources>

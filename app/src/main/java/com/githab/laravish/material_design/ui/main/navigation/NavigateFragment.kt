@@ -58,7 +58,7 @@ class NavigateFragment : Fragment() {
             }
             true
         }
-        navigationBar.selectedItemId = R.id.action_home
+        navigationBar.selectedItemId = R.id.action_favorite
 
     }
 
