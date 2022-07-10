@@ -31,5 +31,6 @@
     <string name="button_two" translatable="false">2</string>
     <string name="button_third" translatable="false">3</string>
     <string name="button_four" translatable="false">4</string>
+    <string name="button_five" translatable="false">5</string>
 
 </resources>
