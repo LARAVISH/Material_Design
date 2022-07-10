@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.layouts.ConstraintFragment">
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/buttonGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btnOne,btnTwo" />
+
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrierOne"
         android:layout_width="wrap_content"
