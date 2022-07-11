@@ -23,9 +23,7 @@
         <item name="textAppearanceLabelLarge">@style/MyTextAppearanceLabelLarge</item>
         <item name="shapeAppearanceOverlay">@style/MyShapeAppearanceSmallComponent</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
-
     </style>
-
 
     <style name="MyShapeAppearanceSmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>

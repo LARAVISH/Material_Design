@@ -9,6 +9,7 @@
         <item name="chipStyle">@style/MyChipStyleForMyThemeGreen</item>
         <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeGreen</item>
         <item name="tabStyle">@style/TabLayoutForGreenTheme</item>
+        <item name="colorPrimaryContainer">@color/light_green</item>
     </style>
 
     <style name="MyChipStyleForMyThemeGreen" parent="MyChipStyle">
@@ -35,6 +36,8 @@
         <item name="chipStyle">@style/MyChipStyleForMeBrownTheme</item>
         <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeBrown</item>
         <item name="tabStyle">@style/TabLayoutForBrownTheme</item>
+        <item name="colorContainer">?colorPrimaryContainer</item>
+        <item name="colorPrimaryContainer">@color/rosy</item>
     </style>
 
     <style name="MyChipStyleForMeBrownTheme" parent="MyChipStyle">
