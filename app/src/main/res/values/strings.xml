@@ -122,5 +122,7 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="fab" translatable="false">FAB</string>
+    <string name="animation" translatable="false">Animation</string>
+    <string name="click" translatable="false">Click</string>
 
 </resources>

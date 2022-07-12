@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.githab.laravish.material_design.R
 import com.githab.laravish.material_design.databinding.FragmentNavigateBinding
+import com.githab.laravish.material_design.ui.main.anomations.AnimationsFragment
 import com.githab.laravish.material_design.ui.main.layouts.FavoriteFragment
 import com.githab.laravish.material_design.ui.main.pictures.PictureOfTheDayFragment
 import com.githab.laravish.material_design.ui.main.setting.SettingFragment
@@ -55,10 +56,13 @@ class NavigateFragment : Fragment() {
                 R.id.action_setting -> {
                     navigateTo(SettingFragment.newInstance())
                 }
+                R.id.action_animation -> {
+                    navigateTo(AnimationsFragment.newInstance())
+                }
             }
             true
         }
-        navigationBar.selectedItemId = R.id.action_favorite
+        navigationBar.selectedItemId = R.id.action_animation
 
     }
 
