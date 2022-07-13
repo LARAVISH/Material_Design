@@ -124,5 +124,6 @@
     <string name="fab" translatable="false">FAB</string>
     <string name="animation" translatable="false">Animation</string>
     <string name="click" translatable="false">Click</string>
+    <string name="tap_on_me" translatable="false">TAP ON ME</string>
 
 </resources>

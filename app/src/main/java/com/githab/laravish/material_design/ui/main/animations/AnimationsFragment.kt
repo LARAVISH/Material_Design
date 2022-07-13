@@ -1,24 +1,21 @@
-package com.githab.laravish.material_design.ui.main.anomations
+package com.githab.laravish.material_design.ui.main.animations
 
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.transition.ChangeBounds
-import androidx.transition.Slide
-import androidx.transition.TransitionManager
-import androidx.transition.TransitionSet
+import com.githab.laravish.material_design.ANIMATE_EXPLODE
+import com.githab.laravish.material_design.ANIMATE_TRANSFORM
 import com.githab.laravish.material_design.databinding.FragmentAnimationsBinding
+import com.google.android.material.tabs.TabLayoutMediator
+
 
 class AnimationsFragment : Fragment() {
 
     private var _binding: FragmentAnimationsBinding? = null
     private val binding: FragmentAnimationsBinding
         get() = _binding!!
-
-    private var isFlag = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,24 +27,21 @@ class AnimationsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        changeBounds()
+        binding.viewPager2.adapter = ViewPager2AnimationFragment(this)
+        bindTab()
     }
 
-    private fun changeBounds() = with(binding) {
-        binding.btnOne.setOnClickListener {
-            isFlag = !isFlag
+    private fun bindTab() = with(binding) {
+        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
+            tab.text = when (position) {
+                0 -> ANIMATE_EXPLODE
+                1 -> ANIMATE_TRANSFORM
 
-            TransitionManager.beginDelayedTransition(binding.root, TransitionSet().apply {
-                ordering = TransitionSet.ORDERING_SEQUENTIAL
-                val slide = Slide(Gravity.START)
-                slide.duration = 1000L
-                val changeBounds = ChangeBounds()
-                changeBounds.duration = 1000L
-                addTransition(changeBounds)
-                addTransition(slide)
-            })
-            text.visibility = if (isFlag) View.VISIBLE else View.GONE
-        }
+                else -> {
+                    ANIMATE_EXPLODE
+                }
+            }
+        }.attach()
     }
 
     companion object {
