@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.githab.laravish.material_design.ANIMATE_EXPLODE
-import com.githab.laravish.material_design.ANIMATE_TRANSFORM
+import com.githab.laravish.material_design.*
 import com.githab.laravish.material_design.databinding.FragmentAnimationsBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -36,7 +35,8 @@ class AnimationsFragment : Fragment() {
             tab.text = when (position) {
                 0 -> ANIMATE_EXPLODE
                 1 -> ANIMATE_TRANSFORM
-
+                2 -> ANIMATE_PATH
+                3 -> ANIMATION_SHUFFLE
                 else -> {
                     ANIMATE_EXPLODE
                 }

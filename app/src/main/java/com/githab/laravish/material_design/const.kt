@@ -19,3 +19,6 @@ const val MARS = "mars"
 const val SYSTEM = "system"
 const val ANIMATE_EXPLODE = "EXPLODE"
 const val ANIMATE_TRANSFORM = "TRANSFORM"
+const val ANIMATE_PATH = "PATH"
+const val ANIMATION_SHUFFLE = "SHUFFLE"
+

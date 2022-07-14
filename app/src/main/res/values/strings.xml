@@ -125,5 +125,7 @@
     <string name="animation" translatable="false">Animation</string>
     <string name="click" translatable="false">Click</string>
     <string name="tap_on_me" translatable="false">TAP ON ME</string>
+    <string name="path" translatable="false">Path</string>
+    <string name="shuffle" translatable="false">Shuffle</string>
 
 </resources>
