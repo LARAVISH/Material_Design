@@ -130,5 +130,6 @@
     <string name="text_option" translatable="false">option one</string>
     <string name="text_option_two" translatable="false">option two</string>
     <string name="todo" translatable="false">TODO</string>
+    <string name="statelistanimator_example" translatable="false">StateListAnimator Example</string>
 
 </resources>

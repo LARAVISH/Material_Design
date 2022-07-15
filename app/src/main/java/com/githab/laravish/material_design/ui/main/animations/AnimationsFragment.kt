@@ -38,6 +38,7 @@ class AnimationsFragment : Fragment() {
                 2 -> ANIMATE_PATH
                 3 -> ANIMATE_SHUFFLE
                 4 -> ANIMATE_OBJECT
+                5 -> ANIMATE_STATE_LIST
                 else -> {
                     ANIMATE_EXPLODE
                 }
