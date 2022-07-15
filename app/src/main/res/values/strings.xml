@@ -127,5 +127,8 @@
     <string name="tap_on_me" translatable="false">TAP ON ME</string>
     <string name="path" translatable="false">Path</string>
     <string name="shuffle" translatable="false">Shuffle</string>
+    <string name="text_option" translatable="false">option one</string>
+    <string name="text_option_two" translatable="false">option two</string>
+    <string name="todo" translatable="false">TODO</string>
 
 </resources>

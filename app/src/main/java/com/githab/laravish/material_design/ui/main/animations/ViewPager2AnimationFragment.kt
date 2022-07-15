@@ -7,7 +7,7 @@ class ViewPager2AnimationFragment(fragment: Fragment) : FragmentStateAdapter(fra
     private val fragments = arrayOf(ExplodeFragment.newInstance(),
         TransformFragment.newInstance(),
         PathTransitionFragment.newInstance(),
-        ShuffleFragment.newInstance())
+        ShuffleFragment.newInstance(), ObjectAnimatorFragment.newInstance())
 
     override fun getItemCount() = fragments.size
 
