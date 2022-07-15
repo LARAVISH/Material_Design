@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.animations.ObjectAnimatorFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment"
+        app:srcCompat="@drawable/bg_earth" />
+
+    <FrameLayout
+        android:id="@+id/transparentBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        android:clickable="false" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/optionOneContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:alpha="0"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/padding_end_option_container"
+            android:paddingBottom="@dimen/padding_bottom_option_container">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:text="@string/text_option"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/archive"
+                app:srcCompat="@drawable/ic_archive" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/optionTwoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:alpha="0"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/padding_end_option_container"
+            android:paddingBottom="@dimen/padding_bottom_option_container">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:text="@string/text_option_two"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:contentDescription="@string/send"
+                app:srcCompat="@drawable/ic_send" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="100dp"
+            android:contentDescription="@string/todo"
+            android:elevation="5dp" />
+
+        <ImageView
+            android:id="@+id/plusImageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="116dp"
+            android:contentDescription="@string/animation"
+            android:elevation="10dp"
+            app:srcCompat="@drawable/ic_plus_fab" />
+
+    </FrameLayout>
+
+</FrameLayout>

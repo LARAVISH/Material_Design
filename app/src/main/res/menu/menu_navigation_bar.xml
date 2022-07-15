@@ -18,6 +18,11 @@
         android:enabled="true"
         android:icon="@drawable/ic_favourite_menu"
         android:title="@string/favorite" />
+    <item
+        android:id="@+id/action_animation"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_animation_24"
+        android:title="@string/animation"/>
 
     <item
         android:id="@+id/action_setting"

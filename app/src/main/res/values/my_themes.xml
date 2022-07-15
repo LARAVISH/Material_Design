@@ -9,6 +9,8 @@
         <item name="chipStyle">@style/MyChipStyleForMyThemeGreen</item>
         <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeGreen</item>
         <item name="tabStyle">@style/TabLayoutForGreenTheme</item>
+        <item name="colorPrimaryContainer">@color/light_green</item>
+
     </style>
 
     <style name="MyChipStyleForMyThemeGreen" parent="MyChipStyle">
@@ -35,6 +37,9 @@
         <item name="chipStyle">@style/MyChipStyleForMeBrownTheme</item>
         <item name="bottomAppBarStyle">@style/BottomAppBarStyleForThemeBrown</item>
         <item name="tabStyle">@style/TabLayoutForBrownTheme</item>
+        <item name="colorContainer">?colorPrimaryContainer</item>
+        <item name="colorPrimaryContainer">@color/rosy</item>
+
     </style>
 
     <style name="MyChipStyleForMeBrownTheme" parent="MyChipStyle">
@@ -50,5 +55,10 @@
         <item name="tabIndicatorColor">@color/yellow</item>
         <item name="tabRippleColor">@color/rosy</item>
     </style>
+    <style name="meShape" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
 
 </resources>

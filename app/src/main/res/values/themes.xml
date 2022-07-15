@@ -23,9 +23,7 @@
         <item name="textAppearanceLabelLarge">@style/MyTextAppearanceLabelLarge</item>
         <item name="shapeAppearanceOverlay">@style/MyShapeAppearanceSmallComponent</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
-
     </style>
-
 
     <style name="MyShapeAppearanceSmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
@@ -54,6 +52,8 @@
         <item name="chipEndPadding">@dimen/chip_end_padding</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
+   
 
 
 </resources>
