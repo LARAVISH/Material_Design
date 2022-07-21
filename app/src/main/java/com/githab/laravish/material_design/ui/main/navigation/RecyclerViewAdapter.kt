@@ -11,13 +11,13 @@ import com.githab.laravish.material_design.databinding.FragmentFirstPictureMarsB
 import com.githab.laravish.material_design.ui.main.navigation.data.Date
 
 class RecyclerViewAdapter(private val listDate: List<Date>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<BaseViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
         return listDate[position].type
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
             TYPE_MARS -> {
                 val binding =
@@ -37,19 +37,30 @@ class RecyclerViewAdapter(private val listDate: List<Date>) :
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
+    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
+        holder.bind(listDate[position])
     }
 
     override fun getItemCount() = listDate.size
 
     inner class MarsViewHolder(val binding: FragmentFirstPictureMarsBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        BaseViewHolder(binding.root) {
+        override fun bind(data: Date) = with(binding) {
+            name.text = data.name
+        }
+    }
 
     inner class EarthViewHolder(val binding: FragmentFirstPictureEarthBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        BaseViewHolder(binding.root) {
+        override fun bind(data: Date) = with(binding) {
+            name.text = data.name
+        }
+    }
 
     inner class HeaderViewHolder(val binding: FragmentFirstPictureHeaderBinding) :
-        RecyclerView.ViewHolder(binding.root)
-
+        BaseViewHolder(binding.root) {
+        override fun bind(data: Date) = with(binding) {
+            name.text = data.name
+        }
+    }
 }
