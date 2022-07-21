@@ -19,17 +19,17 @@ class FirstPictureFragment : Fragment() {
     private lateinit var adapter: RecyclerViewAdapter
 
     private val date = arrayListOf(
-        Date(NAME_HEADER, TYPE_HEADER),
-        Date(NAME_MARS, TYPE_MARS),
-        Date(NAME_MARS, TYPE_MARS),
-        Date(NAME_EARTH, TYPE_EARTH),
-        Date(NAME_MARS, TYPE_MARS),
-        Date(NAME_EARTH, TYPE_EARTH),
-        Date(NAME_EARTH, TYPE_EARTH),
-        Date(NAME_MARS, TYPE_MARS),
-        Date(NAME_EARTH, TYPE_EARTH),
-        Date(NAME_EARTH, TYPE_EARTH),
-        Date(NAME_MARS, TYPE_MARS)
+        Pair(Date(NAME_HEADER, type = TYPE_HEADER), false),
+        Pair(Date(NAME_MARS, type = TYPE_MARS), false),
+        Pair(Date(NAME_MARS, type = TYPE_MARS), false),
+        Pair(Date(NAME_EARTH, type = TYPE_EARTH), false),
+        Pair(Date(NAME_MARS, type = TYPE_MARS), false),
+        Pair(Date(NAME_EARTH, type = TYPE_EARTH), false),
+        Pair(Date(NAME_EARTH, type = TYPE_EARTH), false),
+        Pair(Date(NAME_MARS, type = TYPE_MARS), false),
+        Pair(Date(NAME_EARTH, type = TYPE_EARTH), false),
+        Pair(Date(NAME_EARTH, type = TYPE_EARTH), false),
+        Pair(Date(NAME_MARS, type = TYPE_MARS), false)
     )
 
     override fun onCreateView(
@@ -47,8 +47,9 @@ class FirstPictureFragment : Fragment() {
     }
 
     private val callbackAdd = AddItem {
-        date.add(it, Date("$NAME_MARS${"NEW"}", TYPE_MARS))
+        date.add(it, Pair(Date("$NAME_MARS${"NEW"}", "", TYPE_MARS), false))
         adapter.setAddDate(date, it)
+
     }
 
     private val callbackRemove = RemoveItem {

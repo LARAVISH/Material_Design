@@ -1,6 +1,7 @@
 package com.githab.laravish.material_design.ui.main.navigation
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.githab.laravish.material_design.TYPE_EARTH
@@ -11,25 +12,24 @@ import com.githab.laravish.material_design.databinding.FragmentFirstPictureMarsB
 import com.githab.laravish.material_design.ui.main.navigation.data.Date
 
 class RecyclerViewAdapter(
-    private var listDate: MutableList<Date>,
+    private var listDate: MutableList<Pair<Date, Boolean>>,
     val callbackAdd: AddItem,
     val callbackRemove: RemoveItem,
 ) :
     RecyclerView.Adapter<BaseViewHolder>() {
 
-    fun setAddDate(listDateNew: MutableList<Date>, position: Int) {
+    fun setAddDate(listDateNew: MutableList<Pair<Date, Boolean>>, position: Int) {
         listDate = listDateNew
         notifyItemInserted(position)
     }
 
-    fun setRemoveDate(listDateNew: MutableList<Date>, position: Int) {
+    fun setRemoveDate(listDateNew: MutableList<Pair<Date, Boolean>>, position: Int) {
         listDate = listDateNew
         notifyItemRemoved(position)
     }
 
-
     override fun getItemViewType(position: Int): Int {
-        return listDate[position].type
+        return listDate[position].first.type
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -60,8 +60,8 @@ class RecyclerViewAdapter(
 
     inner class MarsViewHolder(val binding: FragmentFirstPictureMarsBinding) :
         BaseViewHolder(binding.root) {
-        override fun bind(data: Date) = with(binding) {
-            name.text = data.name
+        override fun bind(data: Pair<Date, Boolean>) = with(binding) {
+            name.text = data.first.name
             addItemImageView.setOnClickListener {
                 callbackAdd.add(layoutPosition)
             }
@@ -80,20 +80,28 @@ class RecyclerViewAdapter(
                 }
                 notifyItemMoved(layoutPosition, layoutPosition + 1)
             }
+            marsDescriptionTextView.visibility = if (listDate[layoutPosition].second) View.VISIBLE
+            else View.GONE
+            marsImageView.setOnClickListener {
+                listDate[layoutPosition] = listDate[layoutPosition].let {
+                    it.first to !it.second
+                }
+                notifyItemChanged(layoutPosition)
+            }
         }
     }
 
     inner class EarthViewHolder(val binding: FragmentFirstPictureEarthBinding) :
         BaseViewHolder(binding.root) {
-        override fun bind(data: Date) = with(binding) {
-            name.text = data.name
+        override fun bind(data: Pair<Date, Boolean>) = with(binding) {
+            name.text = data.first.name
         }
     }
 
     inner class HeaderViewHolder(val binding: FragmentFirstPictureHeaderBinding) :
         BaseViewHolder(binding.root) {
-        override fun bind(data: Date) = with(binding) {
-            name.text = data.name
+        override fun bind(data: Pair<Date, Boolean>) = with(binding) {
+            name.text = data.first.name
         }
     }
 }
