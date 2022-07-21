@@ -28,6 +28,7 @@ class PictureOfTheDayFragment : Fragment() {
         ViewModelProvider(this)[PictureOfTheDayViewModel::class.java]
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,

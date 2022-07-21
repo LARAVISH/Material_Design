@@ -27,7 +27,7 @@ class StateListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+        binding.scrollView.setOnScrollChangeListener { _, _, _, _, _ ->
             binding.header.isSelected = binding.scrollView.canScrollVertically(-1)
         }
     }
