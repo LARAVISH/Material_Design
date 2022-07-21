@@ -16,6 +16,22 @@ class FirstPictureFragment : Fragment() {
     private val binding: FragmentFirstPictureBinding
         get() = _binding!!
 
+    private lateinit var adapter: RecyclerViewAdapter
+
+    private val date = arrayListOf(
+        Date(NAME_HEADER, TYPE_HEADER),
+        Date(NAME_MARS, TYPE_MARS),
+        Date(NAME_MARS, TYPE_MARS),
+        Date(NAME_EARTH, TYPE_EARTH),
+        Date(NAME_MARS, TYPE_MARS),
+        Date(NAME_EARTH, TYPE_EARTH),
+        Date(NAME_EARTH, TYPE_EARTH),
+        Date(NAME_MARS, TYPE_MARS),
+        Date(NAME_EARTH, TYPE_EARTH),
+        Date(NAME_EARTH, TYPE_EARTH),
+        Date(NAME_MARS, TYPE_MARS)
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -26,20 +42,18 @@ class FirstPictureFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val listDate = arrayListOf(
-            Date(NAME_HEADER, TYPE_HEADER),
-            Date(NAME_MARS, TYPE_MARS),
-            Date(NAME_MARS, TYPE_MARS),
-            Date(NAME_EARTH, TYPE_EARTH),
-            Date(NAME_MARS, TYPE_MARS),
-            Date(NAME_EARTH, TYPE_EARTH),
-            Date(NAME_EARTH, TYPE_EARTH),
-            Date(NAME_MARS, TYPE_MARS),
-            Date(NAME_EARTH, TYPE_EARTH),
-            Date(NAME_EARTH, TYPE_EARTH),
-            Date(NAME_MARS, TYPE_MARS)
-        )
-        binding.recyclerView.adapter = RecyclerViewAdapter(listDate)
+        adapter = RecyclerViewAdapter(date, callbackAdd, callbackRemove)
+        binding.recyclerView.adapter = adapter
+    }
+
+    private val callbackAdd = AddItem {
+        date.add(it, Date("$NAME_MARS${"NEW"}", TYPE_MARS))
+        adapter.setAddDate(date, it)
+    }
+
+    private val callbackRemove = RemoveItem {
+        date.removeAt(it)
+        adapter.setRemoveDate(date, it)
     }
 
     companion object {

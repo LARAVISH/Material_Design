@@ -10,8 +10,23 @@ import com.githab.laravish.material_design.databinding.FragmentFirstPictureHeade
 import com.githab.laravish.material_design.databinding.FragmentFirstPictureMarsBinding
 import com.githab.laravish.material_design.ui.main.navigation.data.Date
 
-class RecyclerViewAdapter(private val listDate: List<Date>) :
+class RecyclerViewAdapter(
+    private var listDate: List<Date>,
+    val callbackAdd: AddItem,
+    val callbackRemove: RemoveItem,
+) :
     RecyclerView.Adapter<BaseViewHolder>() {
+
+    fun setAddDate(listDateNew: List<Date>, position: Int) {
+        listDate = listDateNew
+        notifyItemInserted(position)
+    }
+
+    fun setRemoveDate(listDateNew: List<Date>, position: Int) {
+        listDate = listDateNew
+        notifyItemRemoved(position)
+    }
+
 
     override fun getItemViewType(position: Int): Int {
         return listDate[position].type
@@ -47,6 +62,12 @@ class RecyclerViewAdapter(private val listDate: List<Date>) :
         BaseViewHolder(binding.root) {
         override fun bind(data: Date) = with(binding) {
             name.text = data.name
+            addItemImageView.setOnClickListener {
+                callbackAdd.add(layoutPosition)
+            }
+            removeItemImageView.setOnClickListener {
+                callbackRemove.remove(layoutPosition)
+            }
         }
     }
 
