@@ -15,6 +15,7 @@ import android.text.style.BulletSpan
 import android.text.style.DynamicDrawableSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -110,24 +111,35 @@ class PictureOfTheDayFragment : Fragment() {
     @SuppressLint("InlinedApi")
     @RequiresApi(Build.VERSION_CODES.P)
     private fun setText(appState: AppState.Success) = with(binding) {
+
         textView.text = appState.pictureOfTheDayResponseData.explanation
         textView.typeface =
             Typeface.createFromAsset(requireActivity().assets, "font/cd2f1-36d91_sunday.ttf")
+
         val spanned: Spanned
         val spannableString: SpannableString
         val spannableStringBuilder: SpannableStringBuilder
-        val text = "My text \nbullet one \nbullet two"
-        spannableString = SpannableString(text)
-        val bulletSpanOne =
-            BulletSpan(20, ContextCompat.getColor(requireContext(), R.color.purple_700), 20)
-        val bulletSpanSecond =
-            BulletSpan(20, ContextCompat.getColor(requireContext(), R.color.purple_700), 20)
-        spannableString.setSpan(bulletSpanOne, 9, 20, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan(bulletSpanSecond,
-            21,
-            spannableString.length,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
+        val text =
+            "My text \nbullet one \nbulleterter two\nbullet wetwwefrtweteone \nbullet wetwettwo\nbullet wetwetwone \nbullet two"
+        val result = text.indexesOf("\n")
+        spannableString = SpannableString(text)
+        Log.d("myLog", "$result")
+
+        var current = result.first()
+        result.forEach {
+            if (current != it) {
+                spannableString.setSpan(BulletSpan(20,
+                    ContextCompat.getColor(requireContext(), R.color.red),
+                    20),
+                    current + 1, it, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+            current = it
+        }
+        spannableString.setSpan(BulletSpan(20,
+            ContextCompat.getColor(requireContext(), R.color.red),
+            20),
+            current + 1, text.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         for (i in text.indices) {
             if (text[i] == 't') {
@@ -135,7 +147,6 @@ class PictureOfTheDayFragment : Fragment() {
                     R.color.red)), i, i + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
             }
         }
-
         val bitmap = ContextCompat.getDrawable(requireContext(), R.drawable.ic_mars)
         val verticalAlignment = DynamicDrawableSpan.ALIGN_CENTER
         val widthInPx = 50
@@ -151,6 +162,10 @@ class PictureOfTheDayFragment : Fragment() {
             textView.text = spannableString
         }
     }
+
+    fun String.indexesOf(substr: String, ignoreCase: Boolean = true): List<Int> =
+        (if (ignoreCase) Regex(substr, RegexOption.IGNORE_CASE) else Regex(substr))
+            .findAll(this).map { it.range.first }.toList()
 
     override fun onDestroy() {
         super.onDestroy()
