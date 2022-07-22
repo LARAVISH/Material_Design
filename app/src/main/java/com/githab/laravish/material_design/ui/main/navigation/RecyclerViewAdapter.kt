@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.githab.laravish.material_design.R
@@ -54,7 +55,7 @@ class RecyclerViewAdapter(
             TYPE_EARTH -> {
                 val binding =
                     FragmentFirstPictureEarthBinding.inflate(LayoutInflater.from(parent.context))
-                EarthViewHolder(binding)
+               EarthViewHolder(binding)
             }
             else -> {
                 val binding =
@@ -97,16 +98,24 @@ class RecyclerViewAdapter(
                 callbackRemove.remove(layoutPosition)
             }
             moveItemUp.setOnClickListener {
-                listDate.removeAt(layoutPosition).apply {
-                    listDate.add(layoutPosition - 1, this)
+                if(listDate[layoutPosition].first == listDate[1].first){
+                    Toast.makeText(itemView.context,"Приехали, начало списка",Toast.LENGTH_LONG).show()
+                }else{
+                    listDate.removeAt(layoutPosition).apply {
+                        listDate.add(layoutPosition - 1, this)
+                    }
+                    notifyItemMoved(layoutPosition, layoutPosition - 1)
                 }
-                notifyItemMoved(layoutPosition, layoutPosition - 1)
             }
             moveItemDown.setOnClickListener {
-                listDate.removeAt(layoutPosition).apply {
-                    listDate.add(layoutPosition + 1, this)
+                if(listDate[layoutPosition].first == listDate[listDate.size - 2].first ){
+                    Toast.makeText(itemView.context,"Приехали, конец списка",Toast.LENGTH_LONG).show()
+                }else{
+                    listDate.removeAt(layoutPosition).apply {
+                        listDate.add(layoutPosition + 1, this)
+                    }
+                    notifyItemMoved(layoutPosition, layoutPosition + 1)
                 }
-                notifyItemMoved(layoutPosition, layoutPosition + 1)
             }
             marsDescriptionTextView.visibility = if (listDate[layoutPosition].second) View.VISIBLE
             else View.GONE
