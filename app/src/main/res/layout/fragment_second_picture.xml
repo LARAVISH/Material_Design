@@ -3,41 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context="ui.main.navigation.SecondPictureFragment">
 
-    <ImageView
-        android:id="@+id/imageViewSecond"
+    <TextView
+
+        android:id="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/bg_mars"
-        android:contentDescription="@string/mars" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="@dimen/margin_bottom_linear_layout"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/swipe_indicator_passive"
-            android:contentDescription="@string/earth" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/swipe_indicator_active"
-            android:layout_marginEnd="@dimen/margin_end_image_view"
-            android:layout_marginStart="@dimen/margin_start_image_view"
-            android:contentDescription="@string/mars" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/swipe_indicator_passive"
-            android:contentDescription="@string/system" />
-    </LinearLayout>
-
+        android:text="@string/cicero" />
 </FrameLayout>

@@ -62,7 +62,7 @@ class NavigateFragment : Fragment() {
             }
             true
         }
-        navigationBar.selectedItemId = R.id.action_gallery
+        navigationBar.selectedItemId = R.id.action_home
 
     }
 

@@ -2,6 +2,7 @@ package com.githab.laravish.material_design.ui.main.pictures
 
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -45,6 +46,7 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.sentRequest(TODAY)
         searchWiki()
         chipGroupOnClick()
+
     }
 
     private fun chipGroupOnClick() = with(binding) {
@@ -86,8 +88,15 @@ class PictureOfTheDayFragment : Fragment() {
                     transformations(RoundedCornersTransformation(50f))
                     error(R.drawable.ic_launcher_background)
                 }
+                setText(appState)
             }
         }
+    }
+
+    private fun FragmentPictureBinding.setText(appState: AppState.Success) {
+        textView.text = appState.pictureOfTheDayResponseData.explanation
+        textView.typeface =
+            Typeface.createFromAsset(requireActivity().assets, "font/cd2f1-36d91_sunday.ttf")
     }
 
     override fun onDestroy() {
