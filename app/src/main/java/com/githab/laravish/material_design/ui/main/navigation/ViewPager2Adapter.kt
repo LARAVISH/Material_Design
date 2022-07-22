@@ -5,12 +5,13 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPager2Adapter(fa: Fragment) : FragmentStateAdapter(fa) {
 
-    private val fragments = arrayOf(FirstPictureFragment(), SecondPictureFragment(), ThirdPictureFragment())
+    private val fragments =
+        arrayOf(SecondPictureFragment(), FirstPictureFragment(), ThirdPictureFragment())
 
     override fun getItemCount() = fragments.size
 
     override fun createFragment(position: Int): Fragment {
-       return fragments[position]
+        return fragments[position]
     }
 
 }
