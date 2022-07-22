@@ -60,7 +60,6 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.sentRequest(TODAY)
         searchWiki()
         chipGroupOnClick()
-
     }
 
     private fun chipGroupOnClick() = with(binding) {
@@ -116,16 +115,14 @@ class PictureOfTheDayFragment : Fragment() {
         textView.typeface =
             Typeface.createFromAsset(requireActivity().assets, "font/cd2f1-36d91_sunday.ttf")
 
-        val spanned: Spanned
+
         val spannableString: SpannableString
-        val spannableStringBuilder: SpannableStringBuilder
 
         val text =
             "My text \nbullet one \nbulleterter two\nbullet wetwwefrtweteone \nbullet wetwettwo\nbullet wetwetwone \nbullet two"
         val result = text.indexesOf("\n")
         spannableString = SpannableString(text)
         Log.d("myLog", "$result")
-
         var current = result.first()
         result.forEach {
             if (current != it) {
@@ -161,6 +158,7 @@ class PictureOfTheDayFragment : Fragment() {
             }
             textView.text = spannableString
         }
+
     }
 
     fun String.indexesOf(substr: String, ignoreCase: Boolean = true): List<Int> =
