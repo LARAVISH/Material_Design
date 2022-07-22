@@ -24,3 +24,13 @@ const val ANIMATE_SHUFFLE = "SHUFFLE"
 const val ANIMATE_OBJECT = "OBJECT"
 const val ANIMATE_STATE_LIST = "STATE LIST"
 
+const val NAME_MARS = "Mars"
+const val NAME_EARTH = "Earth"
+const val NAME_HEADER = "Header"
+const val TYPE_EARTH = 2
+const val TYPE_MARS = 1
+const val TYPE_HEADER = 0
+
+
+
+

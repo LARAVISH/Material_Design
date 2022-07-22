@@ -22,4 +22,7 @@
     <dimen name="padding_linear_layout_shuffle">8dp</dimen>
     <dimen name="padding_end_option_container">32dp</dimen>
     <dimen name="padding_bottom_option_container">100dp</dimen>
+    <dimen name="text_size_earth">30sp</dimen>
+
+
 </resources>
