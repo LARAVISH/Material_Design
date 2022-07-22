@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.githab.laravish.material_design.*
 import com.githab.laravish.material_design.databinding.FragmentFirstPictureBinding
 import com.githab.laravish.material_design.ui.main.navigation.data.Date
@@ -44,6 +45,7 @@ class FirstPictureFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = RecyclerViewAdapter(date, callbackAdd, callbackRemove)
         binding.recyclerView.adapter = adapter
+        ItemTouchHelper(ItemTouchHelperCallBack(adapter)).attachToRecyclerView(binding.recyclerView)
     }
 
     private val callbackAdd = AddItem {

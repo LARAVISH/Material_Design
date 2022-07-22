@@ -3,7 +3,10 @@ package com.githab.laravish.material_design.ui.main.navigation
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.NotificationCompat.getColor
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.githab.laravish.material_design.R
 import com.githab.laravish.material_design.TYPE_EARTH
 import com.githab.laravish.material_design.TYPE_MARS
 import com.githab.laravish.material_design.databinding.FragmentFirstPictureEarthBinding
@@ -16,7 +19,7 @@ class RecyclerViewAdapter(
     val callbackAdd: AddItem,
     val callbackRemove: RemoveItem,
 ) :
-    RecyclerView.Adapter<BaseViewHolder>() {
+    RecyclerView.Adapter<BaseViewHolder>(),ItemTouchHelperAdapter {
 
     fun setAddDate(listDateNew: MutableList<Pair<Date, Boolean>>, position: Int) {
         listDate = listDateNew
@@ -103,5 +106,16 @@ class RecyclerViewAdapter(
         override fun bind(data: Pair<Date, Boolean>) = with(binding) {
             name.text = data.first.name
         }
+    }
+
+    override fun onItemMove(fromPosition: Int, toPosition:Int) {
+        listDate.removeAt(fromPosition).apply {
+            listDate.add(toPosition,this)
+        }
+        notifyItemMoved(fromPosition,toPosition)
+    }
+
+    override fun omItemDismiss(position: Int) {
+        callbackRemove.remove(position)
     }
 }
